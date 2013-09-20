@@ -58,11 +58,7 @@ class lt_widget extends WP_widget {
 		?>
 		<ul>
 		
-		<?php foreach($tweets as $tweet) : 
-			// echo "<pre>"; 
-				// print_r($tweet->user->screen_name); 
-			// echo "</pre>";
-		?>
+		<?php foreach($tweets as $tweet) : ?>
 			<li>
 				<a target="_blank" href="https://twitter.com/<?php echo $tweet->user->screen_name ?>"><img src="<?php echo $tweet->user->profile_image_url ?>" /></a>
 				<span><?php echo parseTweet($tweet->text); ?></span>
@@ -80,7 +76,7 @@ class lt_widget extends WP_widget {
 	function form($data) {
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id('titre') ?>">Titre :</label><br />
+				<label for="<?php echo $this->get_field_id('titre') ?>">Title :</label><br />
 				<input value="<?php echo $data['titre']; ?>" type="text" name="<?php echo $this->get_field_name('titre') ?>" id="<?php echo $this->get_field_id('titre') ?>"/>
 			</p>
 			<h3 style="margin-bottom: 0;">Widget Settings</h3>
